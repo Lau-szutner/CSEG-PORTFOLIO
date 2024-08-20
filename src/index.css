@@ -4,4 +4,14 @@
 
 body {
   background: var(--main-bg-color);
+  color: white;
+  font-family: "Oswald", sans-serif;
 }
+
+/* 
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+} */
