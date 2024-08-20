@@ -1,20 +1,30 @@
 /* MyComponent.module.css */
 .h1 {
-  font-size: 8em;
-  background-color: #080808;
-  color: white;
+  font-size: 6em;
   margin: 5px 0px;
 }
 .h2 {
-  font-size: 5em;
-  background-color: #080808;
-  color: white;
+  font-size: 4em;
   margin: 5px 0px;
   font-style: italic;
   font-weight: 400;
 }
+
+.p1 {
+  font-family: "barlow";
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 5px 0px;
+}
+
+.p2 {
+  font-family: "barlow";
+  font-size: 1.2em;
+  font-weight: 100;
+  margin: 5px 0px;
+}
 .header {
-  margin: 10px 200px;
   display: flex;
   flex-direction: column;
+  height: fit-content;
 }
