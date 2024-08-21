@@ -1,13 +1,9 @@
+import styled from "./edicion.module.css";
+
 export default function VideoComponent({ src }) {
   return (
     <>
-      <iframe
-        width="560"
-        height="315"
-        src={src}
-        title="YouTube video player"
-        frameBorder="0"
-      ></iframe>
+      <iframe src={src} className={styled.video}></iframe>
     </>
   );
 }

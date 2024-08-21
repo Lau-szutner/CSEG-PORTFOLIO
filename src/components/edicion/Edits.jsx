@@ -6,13 +6,11 @@ export default function Edits() {
   return (
     <>
       <h2 className={`container  ${styled.h2}`}>Edición de video</h2>
-      <ul>
+      <div className={`container ${styled.containerVideos}`}>
         {videos.map((video, index) => (
-          <li key={index}>
-            <VideoComponent src={video.src} />
-          </li>
+          <VideoComponent src={video.src} key={index} />
         ))}
-      </ul>
+      </div>
 
       {/* <VideoComponent links={videos[0].src}></VideoComponent>
       <VideoComponent links={videos[0].src}></VideoComponent> */}
