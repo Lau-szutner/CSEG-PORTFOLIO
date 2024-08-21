@@ -1,19 +1,16 @@
 import styled from "./edicion.module.css";
-import VideoComponent from "./videoComponent";
+import VideoEmbed from "./VideoEmbed.jsx";
 import { videos } from "./videos.js";
 
 export default function Edits() {
   return (
     <>
-      <h2 className={`container  ${styled.h2}`}>Edición de video</h2>
-      <div className={`container ${styled.containerVideos}`}>
-        {videos.map((video, index) => (
-          <VideoComponent src={video.src} key={index} />
+      <h2 className={`${styled.h2}`}>Edición de video</h2>
+      <div className={`container ${styled.video}`}>
+        {videos.map((video, n) => (
+          <VideoEmbed src={video.src} key={n} />
         ))}
       </div>
-
-      {/* <VideoComponent links={videos[0].src}></VideoComponent>
-      <VideoComponent links={videos[0].src}></VideoComponent> */}
     </>
   );
 }
