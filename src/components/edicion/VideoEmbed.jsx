@@ -1,7 +1,10 @@
+import styled from "./edicion.module.css";
+
 export default function VideoEmbed({ src }) {
   return (
     <>
       <iframe
+        className={`${styled.video1}`}
         width="300"
         height="300"
         src={src}
