@@ -7,7 +7,9 @@ export default function Header() {
         <h1 className={`${styled.h1}`}>CSEG</h1>
         <h2 className={`${styled.h2} `}>Catalina Segalini</h2>
       </div>
-      <p className={styled.p1}>Licenciada en Artes Digitales</p>
+      <p className={`${styled.p1} ${styled.fadeIn}`}>
+        Licenciada en Artes Digitales
+      </p>
       <p className={styled.p2}>
         Edición de video | Filmmaking | Fotografía | Diseño
       </p>

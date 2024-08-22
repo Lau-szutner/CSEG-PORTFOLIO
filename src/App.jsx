@@ -2,6 +2,7 @@
 import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
 import Edits from "./components/edicion/Edits";
+import MultiItemCarousel from "./components/Fotografia/MultiItemCarousel";
 import "./App.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Navbar></Navbar>
       <Header></Header>
       <Edits></Edits>
+      <MultiItemCarousel></MultiItemCarousel>
     </>
   );
 }
