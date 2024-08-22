@@ -4,6 +4,7 @@ export default function VideoEmbed({ src }) {
   return (
     <>
       <iframe
+        loading="lazy"
         className={`${styled.video1}`}
         width="400"
         height="400"
