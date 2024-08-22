@@ -4,7 +4,6 @@
   margin-bottom: 100px;
   margin-top: 200px;
 }
-
 .carousel {
   display: flex;
   position: relative; /* Necesario para que la flecha se posicione en relación con este contenedor */
@@ -18,14 +17,30 @@
   padding: 10px;
 }
 
-.ArrowRight {
-  background-color: rgba(255, 255, 255, 0.54);
+#btnR {
+  background-color: rgba(32, 32, 32, 0.54);
   color: white;
   width: 100px;
   z-index: 100;
   position: absolute;
   top: 50%; /* Centra verticalmente */
   right: 20px; /* Ajusta la distancia desde el borde derecho */
+  transform: translateY(-50%); /* Ajusta la alineación vertical exacta */
+  cursor: pointer; /* Opcional: Cambia el cursor cuando pasa sobre la flecha */
+}
+
+.div1 {
+  position: relative;
+}
+
+#btnL {
+  background-color: rgba(32, 32, 32, 0.54);
+  color: white;
+  width: 100px;
+  z-index: 100;
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  left: 20px; /* Ajusta la distancia desde el borde derecho */
   transform: translateY(-50%); /* Ajusta la alineación vertical exacta */
   cursor: pointer; /* Opcional: Cambia el cursor cuando pasa sobre la flecha */
 }
