@@ -8,8 +8,8 @@
 .video {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  place-items: center; /* Centra los elementos en ambos ejes (x e y) */
-  gap: 100px 20px; /* Espacio entre los elementos, ajusta según sea necesario */
+  place-items: center; /* Centra los elementos en ambos ejes (x e y) */ /* Espacio entre los elementos, ajusta según sea necesario */
+  gap: 20px;
 }
 
 .video1 {

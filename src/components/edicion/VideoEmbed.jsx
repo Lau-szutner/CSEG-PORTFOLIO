@@ -5,8 +5,8 @@ export default function VideoEmbed({ src }) {
     <>
       <iframe
         className={`${styled.video1}`}
-        width="300"
-        height="300"
+        width="400"
+        height="400"
         src={src}
         title="Video player"
         frameBorder="0"
