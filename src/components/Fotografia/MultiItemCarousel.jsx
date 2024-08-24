@@ -4,22 +4,28 @@ import imagePromises from "../../assets/fotografia/index";
 
 export default function CatFriends() {
   const itemsRef = useRef(null);
-  const [catList, setCatList] = useState(setupCatList);
+  const [catList, setCatList] = useState([]);
 
   function scrollToCat(cat) {
     const map = getMap();
     const node = map.get(cat);
-    node.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
-    });
+    if (node) {
+      node.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+    }
   }
 
   useEffect(() => {
-    imagePromises.then((imagesArray) => {
-      setImages(imagesArray);
-    });
+    imagePromises
+      .then((imagesArray) => {
+        setCatList(imagesArray);
+      })
+      .catch((error) => {
+        console.error("Error loading images:", error);
+      });
   }, []);
 
   function getMap() {
@@ -39,12 +45,11 @@ export default function CatFriends() {
 
       <div className={`${styled.carousel}`}>
         <ul className={`${styled.ul}`}>
-          {catList.map((cat) => (
+          {catList.map((cat, index) => (
             <li
-              key={cat}
+              key={index}
               ref={(node) => {
                 const map = getMap();
-
                 if (node) {
                   map.set(cat, node);
                 } else {
@@ -52,7 +57,7 @@ export default function CatFriends() {
                 }
               }}
             >
-              <img src={cat} />
+              <img src={cat} alt={`Cat ${index}`} />
             </li>
           ))}
         </ul>
@@ -61,17 +66,7 @@ export default function CatFriends() {
   );
 }
 
-function setupCatList() {
-  const catList = [];
-  for (let i = 0; i < 10; i++) {
-    catList.push("https://loremflickr.com/320/240/cat?lock=" + i);
-  }
-
-  return catList;
-}
-
-{
-  /* <img
+/* <img
           id={${styled.btnL}}
           src={arrowLeft}
           alt=""
@@ -89,4 +84,3 @@ function setupCatList() {
             scrollToItem(itemList[5]);
           }}
         /> */
-}
