@@ -7,7 +7,6 @@
 .carousel {
   display: flex;
   position: relative; /* Necesario para que la flecha se posicione en relación con este contenedor */
-  height: auto;
   overflow-x: scroll;
   scroll-behavior: smooth; /* Desplazamiento suave */
   overflow: hidden;
@@ -16,7 +15,11 @@
 .ImagenesComponent {
   padding: 10px;
 }
-
+.ul {
+  display: flex;
+  list-style: none;
+  padding: 30px;
+}
 #btnR {
   background-color: rgba(32, 32, 32, 0.54);
   color: white;
