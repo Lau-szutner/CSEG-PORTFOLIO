@@ -3,13 +3,24 @@ import styled from "./carousel.module.css";
 import imagePromises from "../../assets/fotografia/index";
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
-export default function CatFriends() {
-  const itemsRef = useRef(null);
-  const [catList, setCatList] = useState([]);
 
-  function scrollToCat(cat) {
+export default function MultiItemCarousel() {
+  const itemsRef = useRef(null);
+  const [itemList, setItemlist] = useState([]);
+
+  useEffect(() => {
+    imagePromises
+      .then((imagesArray) => {
+        setItemlist(imagesArray);
+      })
+      .catch((error) => {
+        console.error("Error loading images:", error);
+      });
+  }, []);
+
+  function scrollTo(item) {
     const map = getMap();
-    const node = map.get(cat);
+    const node = map.get(item);
     if (node) {
       node.scrollIntoView({
         behavior: "smooth",
@@ -19,16 +30,6 @@ export default function CatFriends() {
     }
   }
 
-  useEffect(() => {
-    imagePromises
-      .then((imagesArray) => {
-        setCatList(imagesArray);
-      })
-      .catch((error) => {
-        console.error("Error loading images:", error);
-      });
-  }, []);
-
   function getMap() {
     if (!itemsRef.current) {
       itemsRef.current = new Map();
@@ -37,23 +38,27 @@ export default function CatFriends() {
   }
 
   return (
-    <>
+    <section>
       <h2 className={`${styled.h2}`}>Fotografia</h2>
       <div className={`${styled.carousel}`}>
         <ul className={`${styled.ul}`}>
-          {catList.map((cat, index) => (
+          {itemList.map((item, index) => (
             <li
               key={index}
               ref={(node) => {
                 const map = getMap();
                 if (node) {
-                  map.set(cat, node);
+                  map.set(item, node);
                 } else {
-                  map.delete(cat);
+                  map.delete(item);
                 }
               }}
             >
-              <img src={cat} alt={`Cat ${index}`} className={styled.imagenes} />
+              <img
+                src={item}
+                alt={`Cat ${index}`}
+                className={styled.imagenes}
+              />
             </li>
           ))}
         </ul>
@@ -62,19 +67,16 @@ export default function CatFriends() {
           src={arrowLeft}
           alt=""
           className={`${styled.ArrowRight}`}
-          onClick={() => scrollToCat(catList[10])}
+          onClick={() => scrollTo(itemList[10])}
         />
         <img
           id={`${styled.btnR}`}
           src={arrowRight}
           alt=""
           className={`${styled.ArrowRight}`}
-          onClick={() => scrollToCat(catList[6])}
+          onClick={() => scrollTo(itemList[6])}
         />
       </div>
-    </>
+    </section>
   );
 }
-
-/*
- */
