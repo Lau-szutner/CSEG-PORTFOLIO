@@ -1,7 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import styled from "./carousel.module.css";
 import imagePromises from "../../assets/fotografia/index";
-
+import arrowLeft from "../../assets/arrowLeft.svg";
+import arrowRight from "../../assets/arrowRight.svg";
 export default function CatFriends() {
   const itemsRef = useRef(null);
   const [catList, setCatList] = useState([]);
@@ -37,12 +38,7 @@ export default function CatFriends() {
 
   return (
     <>
-      <nav>
-        <button onClick={() => scrollToCat(catList[0])}>Tom</button>
-        <button onClick={() => scrollToCat(catList[5])}>Maru</button>
-        <button onClick={() => scrollToCat(catList[9])}>Jellylorum</button>
-      </nav>
-
+      <h2 className={`${styled.h2}`}>Fotografia</h2>
       <div className={`${styled.carousel}`}>
         <ul className={`${styled.ul}`}>
           {catList.map((cat, index) => (
@@ -57,30 +53,28 @@ export default function CatFriends() {
                 }
               }}
             >
-              <img src={cat} alt={`Cat ${index}`} />
+              <img src={cat} alt={`Cat ${index}`} className={styled.imagenes} />
             </li>
           ))}
         </ul>
+        <img
+          id={`${styled.btnL}`}
+          src={arrowLeft}
+          alt=""
+          className={`${styled.ArrowRight}`}
+          onClick={() => scrollToCat(catList[10])}
+        />
+        <img
+          id={`${styled.btnR}`}
+          src={arrowRight}
+          alt=""
+          className={`${styled.ArrowRight}`}
+          onClick={() => scrollToCat(catList[6])}
+        />
       </div>
     </>
   );
 }
 
-/* <img
-          id={${styled.btnL}}
-          src={arrowLeft}
-          alt=""
-          className={${styled.ArrowRight}}
-          onClick={() => {
-            scrollToItem(itemList[0]);
-          }}
-        />
-        <img
-          id={${styled.btnR}}
-          src={arrowRight}
-          alt=""
-          className={${styled.ArrowRight}}
-          onClick={() => {
-            scrollToItem(itemList[5]);
-          }}
-        /> */
+/*
+ */

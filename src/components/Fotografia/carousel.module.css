@@ -6,9 +6,9 @@
 }
 .carousel {
   display: flex;
-  position: relative; /* Necesario para que la flecha se posicione en relación con este contenedor */
+  position: relative;
   overflow-x: scroll;
-  scroll-behavior: smooth; /* Desplazamiento suave */
+  scroll-behavior: smooth;
   overflow: hidden;
 }
 
@@ -20,13 +20,19 @@
   list-style: none;
   padding: 30px;
 }
+.imagenes {
+  padding: 10px;
+  width: 400px;
+  height: 700px;
+  object-fit: cover;
+}
 #btnR {
   background-color: rgba(32, 32, 32, 0.54);
   color: white;
   width: 100px;
   z-index: 100;
-  position: absolute;
-  top: 50%; /* Centra verticalmente */
+  position: fixed;
+  top: 55%; /* Centra verticalmente */
   right: 20px; /* Ajusta la distancia desde el borde derecho */
   transform: translateY(-50%); /* Ajusta la alineación vertical exacta */
   cursor: pointer; /* Opcional: Cambia el cursor cuando pasa sobre la flecha */
@@ -41,8 +47,8 @@
   color: white;
   width: 100px;
   z-index: 100;
-  position: absolute;
-  top: 50%; /* Centra verticalmente */
+  position: fixed;
+  top: 55%; /* Centra verticalmente */
   left: 20px; /* Ajusta la distancia desde el borde derecho */
   transform: translateY(-50%); /* Ajusta la alineación vertical exacta */
   cursor: pointer; /* Opcional: Cambia el cursor cuando pasa sobre la flecha */
