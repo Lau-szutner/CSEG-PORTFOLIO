@@ -1,23 +1,29 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import styled from "./carousel.module.css";
+import imagePromises from "../../assets/fotografia/index";
 
-export default function MultiItemCarousel() {
+export default function CatFriends() {
   const itemsRef = useRef(null);
-  const [itemList, setItemList] = useState(setupItemList);
+  const [catList, setCatList] = useState(setupCatList);
 
-  function scrollToItem(cat) {
+  function scrollToCat(cat) {
     const map = getMap();
     const node = map.get(cat);
     node.scrollIntoView({
       behavior: "smooth",
-      block: "nearest",
+      block: "center",
       inline: "center",
     });
   }
 
+  useEffect(() => {
+    imagePromises.then((imagesArray) => {
+      setImages(imagesArray);
+    });
+  }, []);
+
   function getMap() {
     if (!itemsRef.current) {
-      // Initialize the Map on first usage.
       itemsRef.current = new Map();
     }
     return itemsRef.current;
@@ -26,18 +32,19 @@ export default function MultiItemCarousel() {
   return (
     <>
       <nav>
-        <button onClick={() => scrollToItem(itemList[0])}>Tom</button>
-        <button onClick={() => scrollToItem(itemList[5])}>Maru</button>
-        <button onClick={() => scrollToItem(itemList[9])}>Jellylorum</button>
+        <button onClick={() => scrollToCat(catList[0])}>Tom</button>
+        <button onClick={() => scrollToCat(catList[5])}>Maru</button>
+        <button onClick={() => scrollToCat(catList[9])}>Jellylorum</button>
       </nav>
+
       <div className={`${styled.carousel}`}>
         <ul className={`${styled.ul}`}>
-          {itemList.map((cat) => (
+          {catList.map((cat) => (
             <li
-              className={`${styled.ImagenesComponent}`}
               key={cat}
               ref={(node) => {
                 const map = getMap();
+
                 if (node) {
                   map.set(cat, node);
                 } else {
@@ -54,30 +61,30 @@ export default function MultiItemCarousel() {
   );
 }
 
-function setupItemList() {
-  const itemList = [];
+function setupCatList() {
+  const catList = [];
   for (let i = 0; i < 10; i++) {
-    itemList.push("https://picsum.photos/400/600?random=${i}" + i);
+    catList.push("https://loremflickr.com/320/240/cat?lock=" + i);
   }
 
-  return itemList;
+  return catList;
 }
 
 {
   /* <img
-          id={`${styled.btnL}`}
+          id={${styled.btnL}}
           src={arrowLeft}
           alt=""
-          className={`${styled.ArrowRight}`}
+          className={${styled.ArrowRight}}
           onClick={() => {
             scrollToItem(itemList[0]);
           }}
         />
         <img
-          id={`${styled.btnR}`}
+          id={${styled.btnR}}
           src={arrowRight}
           alt=""
-          className={`${styled.ArrowRight}`}
+          className={${styled.ArrowRight}}
           onClick={() => {
             scrollToItem(itemList[5]);
           }}
