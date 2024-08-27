@@ -38,10 +38,10 @@ export default function MultiItemCarousel() {
   }
 
   return (
-    <section>
-      <h2 className={`${styled.h2}`}>Fotografia</h2>
-      <div className={`${styled.carousel}`}>
-        <ul className={`${styled.ul}`}>
+    <section className={styled.carouselContainer}>
+      <h2 className={styled.h2}>Fotografia</h2>
+      <div className={styled.carousel}>
+        <ul className={styled.ul}>
           {itemList.map((item, index) => (
             <li
               key={index}
@@ -63,18 +63,18 @@ export default function MultiItemCarousel() {
           ))}
         </ul>
         <img
-          id={`${styled.btnL}`}
-          src={arrowLeft}
-          alt=""
-          className={`${styled.ArrowRight}`}
-          onClick={() => scrollTo(itemList[10])}
+          id={styled.btnR}
+          src={arrowRight}
+          alt="Next"
+          className={styled.arrow}
+          onClick={() => scrollTo(itemList[6])}
         />
         <img
-          id={`${styled.btnR}`}
-          src={arrowRight}
-          alt=""
-          className={`${styled.ArrowRight}`}
-          onClick={() => scrollTo(itemList[6])}
+          id={styled.btnL}
+          src={arrowLeft}
+          alt="Previous"
+          className={styled.arrow}
+          onClick={() => scrollTo(itemList[10])}
         />
       </div>
     </section>
