@@ -74,7 +74,7 @@ export default function MultiItemCarousel() {
           src={arrowLeft}
           alt="Previous"
           className={styled.arrow}
-          onClick={() => scrollTo(itemList[10])}
+          onClick={() => scrollTo(itemList[0])}
         />
       </div>
     </section>

@@ -6,9 +6,9 @@ import MultiItemCarousel from "./components/Fotografia/MultiItemCarousel";
 import "./App.css";
 
 function App() {
-  window.onload = function () {
-    window.scrollTo(0, document.body.scrollHeight);
-  };
+  // window.onload = function () {
+  //   window.scrollTo(0, document.body.scrollHeight);
+  // };
 
   return (
     <>
