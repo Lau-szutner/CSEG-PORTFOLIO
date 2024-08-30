@@ -10,20 +10,19 @@
   width: 100%;
   height: 100%;
 }
-
 .carousel {
   display: flex;
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  overflow: hidden;
+  overflow: hidden; /* Oculta el overflow */
+  scroll-behavior: smooth; /* Asegura el scroll suave */
 }
 
 .ul {
   display: flex;
   list-style: none;
-  padding: 30px;
+  padding: 0; /* Asegura que no haya padding extra que cause problemas */
+  margin: 0; /* Asegura que no haya margin extra que cause problemas */
 }
 
 .imagenes {
