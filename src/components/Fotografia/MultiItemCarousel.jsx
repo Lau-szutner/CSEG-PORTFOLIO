@@ -7,7 +7,7 @@ import arrowRight from "../../assets/arrowRight.svg";
 export default function MultiItemCarousel() {
   const itemsRef = useRef(null);
   const [itemList, setItemlist] = useState([]);
-
+  const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     imagePromises
       .then((imagesArray) => {
@@ -18,8 +18,9 @@ export default function MultiItemCarousel() {
       });
   }, []);
 
-  function scrollTo(item) {
+  function scrollTo(index) {
     const map = getMap();
+    const item = itemList[index];
     const node = map.get(item);
     if (node) {
       node.scrollIntoView({
@@ -35,6 +36,18 @@ export default function MultiItemCarousel() {
       itemsRef.current = new Map();
     }
     return itemsRef.current;
+  }
+
+  function handleNext() {
+    const newIndex = (currentIndex + 1) % itemList.length;
+    setCurrentIndex(newIndex);
+    scrollTo(newIndex);
+  }
+
+  function handlePrev() {
+    const newIndex = (currentIndex - 1 + itemList.length) % itemList.length;
+    setCurrentIndex(newIndex);
+    scrollTo(newIndex);
   }
 
   return (
@@ -67,14 +80,14 @@ export default function MultiItemCarousel() {
           src={arrowRight}
           alt="Next"
           className={styled.arrow}
-          onClick={() => scrollTo(itemList[6])}
+          onClick={handleNext}
         />
         <img
           id={styled.btnL}
           src={arrowLeft}
           alt="Previous"
           className={styled.arrow}
-          onClick={() => scrollTo(itemList[0])}
+          onClick={handlePrev}
         />
       </div>
     </section>
