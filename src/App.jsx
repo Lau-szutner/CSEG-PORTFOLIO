@@ -15,7 +15,7 @@ function App() {
       <Navbar></Navbar>
       <Header></Header>
       <Edits></Edits>
-      <MultiItemCarousel></MultiItemCarousel>
+      <MultiItemCarousel>Fotografia</MultiItemCarousel>
     </>
   );
 }

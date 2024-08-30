@@ -4,7 +4,7 @@ import imagePromises from "../../assets/fotografia/index";
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
 
-export default function MultiItemCarousel() {
+export default function MultiItemCarousel(props) {
   const itemsRef = useRef(null);
   const [itemList, setItemlist] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,7 +52,7 @@ export default function MultiItemCarousel() {
 
   return (
     <section className={styled.carouselContainer}>
-      <h2 className={styled.h2}>Fotografia</h2>
+      <h2 className={styled.h2}>{props.children}</h2>
       <div className={styled.carousel}>
         <ul className={styled.ul}>
           {itemList.map((item, index) => (
