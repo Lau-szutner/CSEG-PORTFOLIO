@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
+import Edits from "./components/edicion/Edits";
 import MultiItemCarousel from "./components/Fotografia/MultiItemCarousel";
 import { imagenesFotografia } from "./assets/fotografia/imageLoader";
 import "./App.css";
@@ -26,6 +27,8 @@ function App() {
     <>
       <Navbar />
       <Header />
+      <Edits />
+      <MultiItemCarousel images={images}>Fotografía</MultiItemCarousel>
       <MultiItemCarousel images={images}>Fotografía</MultiItemCarousel>
     </>
   );

@@ -48,7 +48,7 @@
   height: 700px;
   z-index: 10;
   margin: 15px;
-  overflow: hidden; /* Esconde la parte de la imagen que se amplía */
+  overflow: hidden;
   position: relative;
 }
 
@@ -57,12 +57,12 @@
   height: 100%;
   z-index: 1;
   object-fit: cover;
-  transition: transform 1s ease; /* Añadir transición suave */
+  transition: transform 1s ease;
 }
 
 .imagenes:hover {
   transform: scale(1.1);
-  opacity: 0.5; /* Hace la imagen un poco transparente para ver el fondo del contenedor */
+  opacity: 0.5;
 }
 
 .imageContainer:hover {
