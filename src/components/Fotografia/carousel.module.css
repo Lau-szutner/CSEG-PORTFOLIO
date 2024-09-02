@@ -26,13 +26,6 @@
   padding: 30px;
 }
 
-.imagenes {
-  padding: 10px;
-  width: 400px;
-  height: 700px;
-  object-fit: cover;
-}
-
 .arrow {
   background-color: rgba(32, 32, 32, 0.54);
   color: white;
@@ -50,4 +43,22 @@
 
 #btnL {
   left: 70px; /* Ajusta la distancia desde el borde izquierdo */
+}
+.imageContainer {
+  width: 500px;
+  height: 700px;
+  margin: 10px;
+  overflow: hidden; /* Esconde la parte de la imagen que se amplía */
+  position: relative;
+}
+
+.imagenes {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Añadir transición suave */
+}
+
+.imagenes:hover {
+  transform: scale(1.1); /* Escala la imagen un 10% más grande */
 }

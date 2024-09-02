@@ -8,6 +8,7 @@ export default function MultiItemCarousel(props) {
   const itemsRef = useRef(null);
   const [itemList, setItemlist] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
     imagePromises
       .then((imagesArray) => {
@@ -57,6 +58,7 @@ export default function MultiItemCarousel(props) {
         <ul className={styled.ul}>
           {itemList.map((item, index) => (
             <li
+              className={styled.imageContainer}
               key={index}
               ref={(node) => {
                 const map = getMap();
