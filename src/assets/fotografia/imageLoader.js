@@ -1,12 +1,11 @@
-// Importa todas las imágenes de la carpeta
+// imagesLoader.js
 const imageModules = import.meta.glob(
   "../../assets/fotografia/fotografia-*.jpg"
 );
 
-// Crea un array con las URLs de las imágenes
 const arrayImagenes = Object.keys(imageModules).map((key) =>
   imageModules[key]().then((module) => module.default)
 );
 
-// Exporta el array de promesas
-export default Promise.all(arrayImagenes);
+// Exporta directamente el resultado de Promise.all que es una promesa que resuelve en un array de imágenes.
+export const imagenesFotografia = Promise.all(arrayImagenes);

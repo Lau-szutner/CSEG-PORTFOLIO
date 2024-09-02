@@ -1,23 +1,19 @@
 import { useRef, useState, useEffect } from "react";
 import styled from "./carousel.module.css";
-import imagePromises from "../../assets/fotografia/index";
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
 
-export default function MultiItemCarousel(props) {
+export default function MultiItemCarousel({ images, children }) {
   const itemsRef = useRef(null);
-  const [itemList, setItemlist] = useState([]);
+  const [itemList, setItemList] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    imagePromises
-      .then((imagesArray) => {
-        setItemlist(imagesArray);
-      })
-      .catch((error) => {
-        console.error("Error loading images:", error);
-      });
-  }, []);
+    if (images) {
+      // Aquí simplemente asignamos el array de imágenes a itemList
+      setItemList(images);
+    }
+  }, [images]);
 
   function scrollTo(index) {
     const map = getMap();
@@ -53,7 +49,7 @@ export default function MultiItemCarousel(props) {
 
   return (
     <section className={styled.carouselContainer}>
-      <h2 className={styled.h2}>{props.children}</h2>
+      <h2 className={styled.h2}>{children}</h2>
       <div className={styled.carousel}>
         <ul className={styled.ul}>
           {itemList.map((item, index) => (
@@ -71,7 +67,7 @@ export default function MultiItemCarousel(props) {
             >
               <img
                 src={item}
-                alt={`Cat ${index}`}
+                alt={`Image ${index}`}
                 className={styled.imagenes}
               />
             </li>
