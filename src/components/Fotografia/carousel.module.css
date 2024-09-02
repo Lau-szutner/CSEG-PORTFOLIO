@@ -46,7 +46,8 @@
 .imageContainer {
   width: 500px;
   height: 700px;
-  margin: 10px;
+  z-index: 10;
+  margin: 15px;
   overflow: hidden; /* Esconde la parte de la imagen que se amplía */
   position: relative;
 }
@@ -54,10 +55,21 @@
 .imagenes {
   width: 100%;
   height: 100%;
+  z-index: 1;
   object-fit: cover;
-  transition: transform 0.3s ease; /* Añadir transición suave */
+  transition: transform 1s ease; /* Añadir transición suave */
 }
 
 .imagenes:hover {
-  transform: scale(1.1); /* Escala la imagen un 10% más grande */
+  transform: scale(1.1);
+  opacity: 0.5; /* Hace la imagen un poco transparente para ver el fondo del contenedor */
+}
+
+.imageContainer:hover {
+  background: linear-gradient(rgb(55, 55, 55), white);
+}
+
+.text {
+  font-size: 10px;
+  color: white;
 }
