@@ -10,7 +10,7 @@ This project is a portfolio website for Catalina Lara Segalini (CSEG), a talente
 - Contact Form: A functional contact form for potential clients to reach out.
 - Blog: Section where Catalina shares insights, tips, and stories from her professional journey.
 
-### Tech Stack
+## Tech Stack
 - MongoDB: Database to store portfolio content, blog posts, and contact form submissions.
 - Express.js: Backend framework to handle server-side logic.
 - React.js: Frontend library for building the user interface.
