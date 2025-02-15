@@ -29,7 +29,7 @@ function App() {
       <Header />
       <Edits />
       <MultiItemCarousel images={images}>Fotografía</MultiItemCarousel>
-      <MultiItemCarousel images={images}>Fotografía</MultiItemCarousel>
+      {/* <MultiItemCarousel images={images}>Diseños</MultiItemCarousel> */}
     </>
   );
 }
