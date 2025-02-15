@@ -1,7 +1,7 @@
-import { useRef, useState, useEffect } from "react";
-import styled from "./carousel.module.css";
-import arrowLeft from "../../assets/arrowLeft.svg";
-import arrowRight from "../../assets/arrowRight.svg";
+import { useRef, useState, useEffect } from 'react';
+import styled from './carousel.module.css';
+import arrowLeft from '../../assets/arrowLeft.svg';
+import arrowRight from '../../assets/arrowRight.svg';
 
 export default function MultiItemCarousel({ images, children }) {
   const itemsRef = useRef(null);
@@ -9,21 +9,27 @@ export default function MultiItemCarousel({ images, children }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (images) {
-      // Aquí simplemente asignamos el array de imágenes a itemList
-      setItemList(images);
+    if (images.length > 0) {
+      setItemList(images); // Asegúrate de que las imágenes estén en el estado
     }
   }, [images]);
 
+  // Asignación correcta de imágenes desde el public
+  const loadedImages = [
+    '/fotografia/fotografia-01.jpg',
+    '/fotografia/fotografia-02.jpg',
+    '/fotografia/fotografia-03.jpg',
+    // y así sucesivamente...
+  ];
+
   function scrollTo(index) {
     const map = getMap();
-    const item = itemList[index];
-    const node = map.get(item);
+    const node = map.get(itemList[index]);
     if (node) {
       node.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center',
       });
     }
   }
@@ -65,11 +71,13 @@ export default function MultiItemCarousel({ images, children }) {
                 }
               }}
             >
-              <img
-                src={item}
-                alt={`Image ${index}`}
-                className={styled.imagenes}
-              />
+              <div className={styled.imageWrapper}>
+                <img
+                  src={item} // Ruta de la imagen
+                  alt={`Imagen ${index + 1}`}
+                  className={styled.imagenes}
+                />
+              </div>
             </li>
           ))}
         </ul>

@@ -1,6 +1,6 @@
 // imagesLoader.js
 const imageModules = import.meta.glob(
-  "../../assets/fotografia/fotografia-*.jpg"
+  '../../assets/fotografia/fotografia-*.jpg'
 );
 
 const arrayImagenes = Object.keys(imageModules).map((key) =>
