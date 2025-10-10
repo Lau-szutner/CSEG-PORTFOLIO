@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import Navbar from '@/app/navbar/Navbar';
 import './globals.css';
+import { Playfair_Display } from 'next/font/google';
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin', 'cyrillic'],
+});
 
 export const metadata: Metadata = {
   title: 'Cseg - Portfolio',
@@ -13,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={playfairDisplay.className}>
       <body className="bg-[var(--background)]">
         <Navbar />
         {children}

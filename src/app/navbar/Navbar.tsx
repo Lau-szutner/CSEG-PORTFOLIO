@@ -1,17 +1,25 @@
 const Navbar = () => {
+  const navBarLinks: string[] = [
+    'Inicio',
+    'Biografía',
+    'Servicios',
+    'Fotografía',
+    'Marcas',
+    'Edición',
+    'Content Creator',
+  ];
+
   return (
-    <nav className="wrapper">
-      <div className="liquidGlass-wrapper menu">
-        <div className="liquidGlass-effect"></div>
-        <div className="liquidGlass-tint"></div>
-        <div className="liquidGlass-shine"></div>
-        <div className="liquidGlass-text">
-          <div>New file</div>
-          <div>Open file</div>
-          <div>Settings</div>
-          <div>Repository</div>
-        </div>
-      </div>
+    <nav
+      className={`text-white px-15 w-full glassmorphism top-0 absolute z-30`}
+    >
+      <ul className="flex justify-between py-5">
+        {navBarLinks.map((link, index) => (
+          <li key={index} className="cursor-pointer">
+            {link}
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };
