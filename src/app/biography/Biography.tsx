@@ -15,24 +15,29 @@ const dataBiography = {
 
 const Biography = () => {
   return (
-    <section className="h-fit w-full text-white italic grid gap-5 px-15 py-20 grid md:grid-cols-2">
-      <div className="grid gap-5">
-        <div className="grid gap-1">
-          <h2 className="text-5xl font-extrabold">{dataBiography.titulo}</h2>
-          <h3 className="text-4xl font-bold">{dataBiography.name}</h3>
+    <section className="h-fit w-full text-white grid md:grid-cols-2 p-5 md:p-20">
+      <div className="grid px-10">
+        <div className="grid h-fit gap-5">
+          <h2 className="xl:text-7xl text-6xl font-extrabold">
+            {dataBiography.titulo}
+          </h2>
+          <h3 className="xl:text-5xl text-4xl font-bold">
+            {dataBiography.name}
+          </h3>
         </div>
-        <div className="grid gap-5">
+
+        <div className="grid gap-10 mt-10 text-xl w-9/12">
           <p>{dataBiography.text1}</p>
           <p>{dataBiography.text2}</p>
           <p>{dataBiography.text3}</p>
         </div>
 
-        <div className="flex flex-col gap-5 md:flex-row  w-full">
+        <div className="flex flex-col gap-5 md:flex-row w-full mt-10">
           <div className="font-semi">
             <p>{dataBiography.email}</p>
             <p>{dataBiography.phone}</p>
           </div>
-          <div className="flex justify-around w-full">
+          <div className="flex justify-around w-full mt-10">
             <svg
               width="84"
               height="84"
@@ -60,7 +65,7 @@ const Biography = () => {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="flex justify-center items-center mt-10">
         <Image src="/foto-cata.png" alt="" width={500} height={800}></Image>
       </div>
     </section>
