@@ -17,7 +17,7 @@ const Biography = () => {
   return (
     <section className="h-fit w-full text-white grid md:grid-cols-2 p-5 md:p-20">
       <div className="grid px-10">
-        <div className="grid h-fit gap-5">
+        <div className="grid h-fit gap-5 italic">
           <h2 className="xl:text-7xl text-6xl font-extrabold">
             {dataBiography.titulo}
           </h2>
@@ -26,7 +26,7 @@ const Biography = () => {
           </h3>
         </div>
 
-        <div className="grid gap-10 mt-10 text-xl w-9/12">
+        <div className="grid gap-10 mt-10 text-xl md:w-9/12 w-full">
           <p>{dataBiography.text1}</p>
           <p>{dataBiography.text2}</p>
           <p>{dataBiography.text3}</p>
