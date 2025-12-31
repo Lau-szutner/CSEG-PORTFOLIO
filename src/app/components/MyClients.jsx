@@ -9,17 +9,25 @@ import 'slick-carousel/slick/slick-theme.css';
 const upperRow = [
   { src: '/clients/coinbox.png', alt: 'Coinbox' },
   { src: '/clients/buildingC.png', alt: 'Building C' },
-  { src: '/clients/heyLogo.png', alt: 'hey' },
+  { src: '/clients/heyLogo.png', alt: 'Hey' },
   { src: '/clients/metaMind.png', alt: 'MetaMind' },
-  { src: '/clients/joven-inversor.png', alt: 'joven inversor' },
-  { src: '/clients/tiendacripto.png', alt: 'tiendacripto' },
+  { src: '/clients/joven-inversor.png', alt: 'Joven Inversor' },
+  { src: '/clients/tiendacripto.png', alt: 'Tienda Cripto' },
+];
+
+const bottomRow = [
+  { src: '/clients/dvVickLogo.png', alt: 'DV Vick' },
+  { src: '/clients/la-paloma.png', alt: 'La Paloma' },
+  { src: '/clients/vanda.png', alt: 'Vanda' },
+  { src: '/clients/civic8.png', alt: 'Civic 8' },
+  { src: '/clients/adventure-photos.png', alt: 'Adventure Photos' },
 ];
 
 const baseSettings = {
   infinite: true,
   autoplay: true,
   autoplaySpeed: 0,
-  speed: 6000,
+  speed: 8000,
   cssEase: 'linear',
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -35,19 +43,20 @@ const baseSettings = {
 
 export default function MyClients() {
   return (
-    <section className="py-16 bg-neutral-900 overflow-hidden">
-      <h2 className="text-white text-5xl mb-12 text-center">Mis Clientes</h2>
+    <section className="py-20 bg-neutral-900 overflow-hidden">
+      <h2 className="text-white text-5xl mb-14 text-center font-extrabold">
+        Mis Clientes
+      </h2>
 
       {/* FILA SUPERIOR */}
-      <Slider {...baseSettings} className="mb-10">
+      <Slider {...baseSettings} className="mb-12">
         {upperRow.map((brand, i) => (
           <div key={i} className="px-6">
-            <div className="flex items-center justify-center h-fit">
+            <div className="relative h-24 md:h-48 flex items-center justify-center">
               <Image
                 src={brand.src}
                 alt={brand.alt}
-                width={160}
-                height={160}
+                fill
                 className="object-contain"
                 priority={i < 4}
               />
@@ -56,22 +65,21 @@ export default function MyClients() {
         ))}
       </Slider>
 
-      {/* FILA INFERIOR (DIRECCIÓN CONTRARIA) */}
-      {/* <Slider {...baseSettings} rtl>
-        {brands.map((brand, i) => (
+      {/* FILA INFERIOR (dirección contraria) */}
+      <Slider {...baseSettings} rtl>
+        {bottomRow.map((brand, i) => (
           <div key={i} className="px-6">
-            <div className="h-24 flex items-center justify-center bg-white rounded-md">
+            <div className="relative h-24  md:h-48 flex items-center justify-center">
               <Image
                 src={brand.src}
                 alt={brand.alt}
-                width={160}
-                height={80}
+                fill
                 className="object-contain"
               />
             </div>
           </div>
         ))}
-      </Slider> */}
+      </Slider>
     </section>
   );
 }
