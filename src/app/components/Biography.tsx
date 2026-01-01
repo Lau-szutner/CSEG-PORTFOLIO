@@ -66,7 +66,16 @@ const Biography = () => {
         </div>
       </div>
       <div className="flex justify-center items-center mt-10">
-        <Image src="/foto-cata.png" alt="" width={500} height={800}></Image>
+        <div className="w-[90%] md:w-[500px] h-auto">
+          <Image
+            src="/foto-cata.png"
+            alt="Descripción"
+            width={500}
+            height={800}
+            sizes="(max-width: 768px) 100vw, 500px"
+            className="w-full h-auto object-contain"
+          />
+        </div>
       </div>
     </section>
   );

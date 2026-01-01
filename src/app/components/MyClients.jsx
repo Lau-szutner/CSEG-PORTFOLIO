@@ -29,21 +29,38 @@ const baseSettings = {
   autoplaySpeed: 0,
   speed: 8000,
   cssEase: 'linear',
-  slidesToShow: 4,
+  slidesToShow: 4, // <--- Este es el valor para pantallas GRANDES
   slidesToScroll: 1,
   arrows: false,
   dots: false,
   pauseOnHover: false,
-  pauseOnFocus: false,
   responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 3 } },
-    { breakpoint: 640, settings: { slidesToShow: 2 } },
+    {
+      breakpoint: 1536, // Pantallas 2XL
+      settings: { slidesToShow: 5 },
+    },
+    {
+      breakpoint: 1280, // Pantallas XL
+      settings: { slidesToShow: 4 },
+    },
+    {
+      breakpoint: 1024, // Tablets / Laptops pequeñas
+      settings: { slidesToShow: 2 },
+    },
+    {
+      breakpoint: 768, // Tablets pequeñas
+      settings: { slidesToShow: 2 },
+    },
+    {
+      breakpoint: 640, // Móviles
+      settings: { slidesToShow: 1 },
+    },
   ],
 };
 
 export default function MyClients() {
   return (
-    <section className="py-20 bg-neutral-900 overflow-hidden">
+    <section className="py-10 bg-neutral-900 overflow-hidden h-fit">
       <h2 className="text-white text-5xl mb-14 text-center font-extrabold">
         Mis Clientes
       </h2>
