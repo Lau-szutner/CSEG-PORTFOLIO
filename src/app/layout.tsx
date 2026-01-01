@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-// import Navbar from '@/app/navbar/Navbar';
+import Navbar from '@/app/components/Navbar';
 import './globals.css';
 import { Playfair_Display } from 'next/font/google';
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={playfairDisplay.className}>
       <body className="bg-[var(--background)]">
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
       </body>
     </html>

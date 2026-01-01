@@ -6,8 +6,8 @@ import SkillsCard from './components/SkillsCard';
 export default function Home() {
   return (
     <>
-      {/* <Header></Header> */}
-      {/* <Biography /> */}
+      <Header></Header>
+      <Biography />
       <MyClients />
       <div className="p-5 gap-5 flex flex-col items-center justify-center md:flex-row ">
         <SkillsCard
@@ -24,7 +24,8 @@ export default function Home() {
           backgroundUrl="edicion"
         />
         <SkillsCard
-          title="Fotografia"
+          title="Content
+Creator"
           shortDescription="Retrato, paisajes, 
         arquitectura, deportiva"
           backgroundUrl="creator"

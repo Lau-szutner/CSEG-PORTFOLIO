@@ -32,7 +32,7 @@ const Biography = () => {
           <p>{dataBiography.text3}</p>
         </div>
 
-        <div className="flex flex-col gap-5 md:flex-row w-full mt-10">
+        <div className="flex flex-col gap-5 md:flex-row w-full mt-10 items-center justify-evenly">
           <div className="font-semi">
             <p>{dataBiography.email}</p>
             <p>{dataBiography.phone}</p>
