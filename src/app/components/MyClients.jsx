@@ -1,10 +1,9 @@
 'use client';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 import Image from 'next/image';
-import Slider from 'react-slick';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const upperRow = [
   { src: '/clients/coinbox.png', alt: 'Coinbox' },
@@ -21,82 +20,85 @@ const bottomRow = [
   { src: '/clients/vanda.png', alt: 'Vanda' },
   { src: '/clients/civic8.png', alt: 'Civic 8' },
   { src: '/clients/adventure-photos.png', alt: 'Adventure Photos' },
+  { src: '/clients/tiendacripto.png', alt: 'Tienda Cripto' },
 ];
-
-const baseSettings = {
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 0,
-  speed: 8000,
-  cssEase: 'linear',
-  slidesToShow: 4, // <--- Este es el valor para pantallas GRANDES
-  slidesToScroll: 1,
-  arrows: false,
-  dots: false,
-  pauseOnHover: false,
-  responsive: [
-    {
-      breakpoint: 1536, // Pantallas 2XL
-      settings: { slidesToShow: 5 },
-    },
-    {
-      breakpoint: 1280, // Pantallas XL
-      settings: { slidesToShow: 4 },
-    },
-    {
-      breakpoint: 1024, // Tablets / Laptops pequeñas
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 768, // Tablets pequeñas
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 640, // Móviles
-      settings: { slidesToShow: 1 },
-    },
-  ],
-};
 
 export default function MyClients() {
   return (
-    <section className="py-10 bg-neutral-900 overflow-hidden h-fit">
+    <section className="py-10 bg-[var(--background-bright)]    overflow-hidden h-fit w-full">
       <h2 className="text-white text-5xl mb-14 text-center font-extrabold">
         Mis Clientes
       </h2>
 
       {/* FILA SUPERIOR */}
-      <Slider {...baseSettings} className="mb-12">
-        {upperRow.map((brand, i) => (
-          <div key={i} className="px-6">
-            <div className="relative h-24 md:h-48 flex items-center justify-center">
-              <Image
-                src={brand.src}
-                alt={brand.alt}
-                fill
-                className="object-contain"
-                priority={i < 4}
-              />
-            </div>
-          </div>
-        ))}
-      </Slider>
+      <div className="mb-12 h-48 w-full">
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={5}
+          spaceBetween={30}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
+          speed={8000}
+          loop
+          observer={true}
+          observeParents={true}
+          breakpoints={{
+            1280: { slidesPerView: 5 },
+            1024: { slidesPerView: 4 },
+            768: { slidesPerView: 3 },
+            320: { slidesPerView: 2 },
+          }}
+          className="h-full"
+        >
+          {upperRow.map((brand, i) => (
+            <SwiperSlide key={i} className="flex items-center justify-center">
+              <div className="relative h-24  md:h-48 flex items-center justify-center">
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  fill
+                  className="object-contain"
+                  priority={i < 4}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       {/* FILA INFERIOR (dirección contraria) */}
-      <Slider {...baseSettings} rtl>
-        {bottomRow.map((brand, i) => (
-          <div key={i} className="px-6">
-            <div className="relative h-24  md:h-48 flex items-center justify-center">
-              <Image
-                src={brand.src}
-                alt={brand.alt}
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-        ))}
-      </Slider>
+      <div className="h-48 w-full">
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={5}
+          spaceBetween={30}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
+          speed={8000}
+          loop
+          dir="rtl"
+          observer={true}
+          observeParents={true}
+          breakpoints={{
+            1280: { slidesPerView: 5 },
+            1024: { slidesPerView: 4 },
+            768: { slidesPerView: 3 },
+            320: { slidesPerView: 2 },
+          }}
+          className="h-full"
+        >
+          {bottomRow.map((brand, i) => (
+            <SwiperSlide key={i} className="flex items-center justify-center">
+              <div className="relative h-24  md:h-48 flex items-center justify-center">
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 }

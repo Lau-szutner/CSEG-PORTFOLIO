@@ -16,7 +16,7 @@ const dataBiography = {
 const Biography = () => {
   return (
     <section className="h-fit w-full text-white grid md:grid-cols-2 p-5 md:p-20">
-      <div className="grid px-10">
+      <div className="grid px-2">
         <div className="grid h-fit gap-5 italic">
           <h2 className="xl:text-7xl text-6xl font-extrabold">
             {dataBiography.titulo}
@@ -66,7 +66,7 @@ const Biography = () => {
         </div>
       </div>
       <div className="flex justify-center items-center mt-10">
-        <div className="w-[90%] md:w-[500px] h-auto">
+        <div className="w-full md:w-[500px] h-auto">
           <Image
             src="/foto-cata.png"
             alt="Descripción"

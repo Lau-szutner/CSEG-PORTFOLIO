@@ -13,7 +13,7 @@ const SkillsCard = ({
 
   return (
     <div
-      className="skills-card xl:w-[400px]	xl:h-[488px] w-[240px] h-[293px] md:w-[320px]	md:h-[390px] text-white p-5 text-center flex flex-col items-center justify-center  overflow-hidden bg-cover bg-center relative rounded-md hover:scale-105 duration-150"
+      className="skills-card xl:w-[400px]	xl:h-[488px] md:w-[320px]	md:h-[390px] w-[320px] h-[391px] text-white p-5 text-center flex flex-col items-center justify-center  overflow-hidden bg-cover bg-center relative rounded-md hover:scale-105 duration-150"
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       {/* Overlay opcional para que el texto se lea mejor */}
