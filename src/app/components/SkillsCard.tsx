@@ -12,19 +12,20 @@ const SkillsCard = ({
   const imageUrl = `./Skills/${backgroundUrl}.png`; // Puede venir por props
 
   return (
-    <div
-      className="skills-card xl:w-[400px]	xl:h-[488px] md:w-[320px]	md:h-[390px] w-[320px] h-[391px] text-white p-5 text-center flex flex-col items-center justify-center  overflow-hidden bg-cover bg-center relative rounded-md hover:scale-105 duration-150"
-      style={{ backgroundImage: `url(${imageUrl})` }}
-    >
-      {/* Overlay opcional para que el texto se lea mejor */}
-      <div className="absolute inset-0 bg-black/25 z-10"></div>
+    <section>
+      <div
+        className="skills-card xl:w-[400px]	xl:h-[488px] md:w-[320px]	md:h-[390px] w-[320px] h-[391px] text-white p-5 text-center flex flex-col items-center justify-center  overflow-hidden bg-cover bg-center relative rounded-md hover:scale-105 duration-150"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      >
+        {/* Overlay opcional para que el texto se lea mejor */}
+        <div className="absolute inset-0 bg-black/25 z-10"></div>
 
-      <div className="mb-10 z-10">
-        <h3 className="font-extrabold xl:text-5xl">{title}</h3>
-        <p>{shortDescription}</p>
-      </div>
-      <button
-        className="
+        <div className="mb-10 z-10">
+          <h3 className="font-extrabold xl:text-5xl text-4xl">{title}</h3>
+          <p>{shortDescription}</p>
+        </div>
+        <button
+          className="
   group relative z-10 
   px-8 py-3 
   rounded-2xl 
@@ -42,20 +43,21 @@ const SkillsCard = ({
   active:scale-95
   cursor-pointer
 "
-      >
-        {/* Reflejo de luz interior (Efecto de brillo en la esquina) */}
-        <span
-          className="
+        >
+          {/* Reflejo de luz interior (Efecto de brillo en la esquina) */}
+          <span
+            className="
     absolute inset-0 rounded-2xl 
     bg-gradient-to-br from-white/20 via-transparent to-transparent 
     opacity-0 group-hover:opacity-100 
     transition-opacity duration-500
   "
-        ></span>
+          ></span>
 
-        <span className="relative">Ver más</span>
-      </button>
-    </div>
+          <span className="relative">Ver más</span>
+        </button>
+      </div>
+    </section>
   );
 };
 
