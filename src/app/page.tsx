@@ -16,7 +16,7 @@ export default function Home() {
       <MyClients />
       <Services />
       <VideoEditing />
-      {/* <Photography /> */}
+      <Photography />
     </>
   );
 }

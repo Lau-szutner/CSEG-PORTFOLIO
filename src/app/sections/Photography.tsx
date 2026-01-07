@@ -21,8 +21,7 @@ const Photography = () => {
         slidesPerView={3}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
-        modules={[Mousewheel, Navigation]}
-        navigation={true}
+        modules={[Mousewheel]}
         className=""
       >
         {slides.map((photo, i) => (
