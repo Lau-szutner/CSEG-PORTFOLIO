@@ -3,6 +3,7 @@
 :root {
   --background: #212121;
   --background-bright: #272727;
+  scroll-behavior: smooth;
 }
 .glassmorphism {
   background-color: rgba(255, 255, 255, 0.1);

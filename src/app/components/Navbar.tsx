@@ -8,11 +8,11 @@ const Navbar = () => {
   const navBarLinks: string[] = [
     'Inicio',
     'Biografía',
+    'Clientes',
     'Servicios',
-    'Fotografía',
-    'Marcas',
     'Edición',
-    'Content Creator',
+    'Fotografía',
+    // 'Content Creator',
   ];
 
   return (
@@ -25,7 +25,7 @@ const Navbar = () => {
               key={index}
               className="group relative cursor-pointer text-[10px] font-light uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:text-white"
             >
-              {link}
+              <a href={`#${link}`}>{link}</a>
               {/* Línea minimalista que aparece abajo en hover */}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-white/40 transition-all duration-300 group-hover:w-full"></span>
             </li>

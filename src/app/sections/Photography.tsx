@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Mousewheel, Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -12,7 +12,10 @@ const slides = [1, 2, 3, 4, 5, 6];
 
 const Photography = () => {
   return (
-    <section className="bg-[var(--background)] h-fit w-full text-white p-20 ">
+    <section
+      className="bg-[var(--background)] h-fit w-full text-white p-20 "
+      id="Fotografía"
+    >
       <h2 className="text-white text-7xl mb-20 text-center font-extrabold">
         Fotografia
       </h2>
@@ -21,7 +24,7 @@ const Photography = () => {
         slidesPerView={3}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
-        modules={[Mousewheel]}
+        // modules={[]}
         className=""
       >
         {slides.map((photo, i) => (

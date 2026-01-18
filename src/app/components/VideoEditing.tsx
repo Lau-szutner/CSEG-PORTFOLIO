@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 
 const videoLinks = [
   'https://www.youtube.com/watch?v=7r7MG_70A0k',
-  'https://www.youtube.com/watch?v=Lntj1FyGvkk&t=1s',
+  'https://www.youtube.com/watch?v=Lntj1FyGvkk',
   'https://www.youtube.com/watch?v=8de4FX27qbE',
   'https://www.youtube.com/watch?v=mZoQ_Eqbd-o',
   'https://www.youtube.com/watch?v=RAWmRtijkkQ',
   'https://www.youtube.com/watch?v=_bObr--Mg4c',
   'https://www.youtube.com/watch?v=kXedEFh6OWU',
-  'https://www.youtube.com/watch?v=aDXb-FrBjPg&t=1s',
-  'https://www.youtube.com/watch?v=4WcnfiIxhJ4&t=1s',
+  'https://www.youtube.com/watch?v=aDXb-FrBjPg',
+  'https://www.youtube.com/watch?v=4WcnfiIxhJ4',
 ];
 
 const getEmbedUrl = (url: string, autoplay = false) => {
@@ -24,7 +24,10 @@ const getEmbedUrl = (url: string, autoplay = false) => {
 
 const VideoEditing = () => {
   return (
-    <section className="bg-[var(--background-bright)] w-full text-white py-20">
+    <section
+      className="bg-[var(--background-bright)] w-full text-white py-20"
+      id="Edición"
+    >
       <h2 className="text-7xl mb-20 text-center font-extrabold">
         Edición de video
       </h2>

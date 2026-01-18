@@ -2,7 +2,10 @@ import SkillsCard from '@/app/components/SkillsCard';
 
 const Services = () => {
   return (
-    <section className="h-fit w-full text-white text-center py-20">
+    <section
+      className="h-fit w-full text-white text-center py-20"
+      id="Servicios"
+    >
       <h2 className="text-white text-7xl mb-20 text-center font-extrabold">
         Servicios
       </h2>

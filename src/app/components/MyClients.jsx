@@ -25,7 +25,10 @@ const bottomRow = [
 
 export default function MyClients() {
   return (
-    <section className="py-20 bg-[var(--background-bright)] overflow-hidden h-fit w-full">
+    <section
+      className="py-20 bg-[var(--background-bright)] overflow-hidden h-fit w-full"
+      id="Clientes"
+    >
       <h2 className="text-white text-7xl mb-20 text-center font-extrabold">
         Mis Clientes
       </h2>

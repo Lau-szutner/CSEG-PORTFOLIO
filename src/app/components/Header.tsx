@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <section className="h-screen relative">
+    <section className="h-screen relative" id="Inicio">
       <Image
         src="/header-background.png"
         alt=""
