@@ -2,8 +2,7 @@
 import Image from 'next/image';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-
+import { Pagination } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -20,15 +19,16 @@ const Photography = () => {
         Fotografia
       </h2>
       <Swiper
-        spaceBetween={20}
         slidesPerView={3}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        // modules={[]}
-        className=""
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
       >
         {slides.map((photo, i) => (
-          <SwiperSlide key={i} className="flex items-center justify-center">
+          <SwiperSlide key={i}>
             <Image
               src="/photography/photograpy-1.png"
               width={500}

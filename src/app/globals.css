@@ -11,3 +11,19 @@
   -webkit-backdrop-filter: blur(px) saturate(100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/*
+/* Esto crea el espacio debajo de las fotos */
+.mySwiper {
+  padding-bottom: 50px !important;
+}
+
+/* Esto posiciona los puntos en ese nuevo espacio */
+.mySwiper .swiper-pagination {
+  bottom: 0px !important;
+}
+
+/* Opcional: Cambia el color de los puntos si no se ven */
+.mySwiper .swiper-pagination-bullet-active {
+  background: white !important;
+}
