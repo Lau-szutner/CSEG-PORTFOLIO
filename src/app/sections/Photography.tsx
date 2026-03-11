@@ -18,6 +18,7 @@ const Photography = () => {
       <h2 className="text-white text-7xl mb-20 text-center font-extrabold">
         Fotografia
       </h2>
+
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
