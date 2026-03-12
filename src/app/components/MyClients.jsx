@@ -20,7 +20,7 @@ const bottomRow = [
   { src: '/clients/vanda.png', alt: 'Vanda' },
   { src: '/clients/civic8.png', alt: 'Civic 8' },
   { src: '/clients/adventure-photos.png', alt: 'Adventure Photos' },
-  { src: '/clients/tiendacripto.png', alt: 'Tienda Cripto' },
+  // { src: '/clients/tiendacripto.png', alt: 'Tienda Cripto' },
 ];
 
 export default function MyClients() {
@@ -81,10 +81,10 @@ export default function MyClients() {
           observer={true}
           observeParents={true}
           breakpoints={{
-            1280: { slidesPerView: 5 },
-            1024: { slidesPerView: 4 },
-            768: { slidesPerView: 3 },
-            320: { slidesPerView: 2 },
+            1280: { slidesPerView: 4 },
+            1024: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+            320: { slidesPerView: 1 },
           }}
           className="h-full"
         >

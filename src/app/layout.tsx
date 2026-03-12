@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={playfairDisplay.className}>
+    <html lang="es" className={playfairDisplay.className}>
       <body className="bg-[var(--background)]">
         <Navbar />
         {children}
