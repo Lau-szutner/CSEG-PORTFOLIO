@@ -1,14 +1,13 @@
-import Image from 'next/image';
-
 export default function Header() {
   return (
     <section className="h-screen relative" id="Inicio">
-      <Image
-        src="/header-background.png"
-        alt=""
-        fill
+      <video
+        src="/cata-portada.mp4"
+        autoPlay
+        muted
+        loop
         style={{ objectFit: 'cover' }}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 w-full h-full z-0"
       />
 
       <div className="relative z-10 grid h-full place-content-center text-center text-white gap-3">
